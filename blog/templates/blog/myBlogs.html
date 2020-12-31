@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <script>
+            function viewArticle(url, pk) {
+                window.open(url);
+                $.get('YOUR_VIEW_HERE/'+pk+'/', function (data) {
+                    alert("counter updated!");
+                });
+            }
+    </script> -->
+  <body>
+    {% include 'navbar.html' %}
+    {% if login %}
+      {% ifequal login 'S' %}
+      <div class="container alert alert-success alert-dismissible fade show mt-2" role="alert">
+          Login Successfull!!!
+        </div>
+      {% else %}
+        <div class="container alert alert-danger alert-dismissible fade show mt-2" role="alert">
+          Login Failed
+        </div>
+      {% endifequal %}
+    {% endif %}
+    <div class="container mt-3">
+      {% for p in posts %}
+      <div class="card text-center mt-2">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.title }}</h5>
+          <p class="card-text">Author: {{ p.username.username }}<br> Publishing Date: {{ p.pub_date }}</p>
+          <form class="" action="{% url 'blog-view' %}?Id={{ p.id }}" method="get">
+              <input type="text" name="Id" value="{{p.id}}" hidden>
+              <button class="btn btn-primary" type="submit">
+                Read Article
+              </button>
+          </form>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'bootstrap_scripts.html' %}
+  </body>
+</html>

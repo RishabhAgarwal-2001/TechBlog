@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <body>
+      {% include 'navbar.html' %}
+      {% if login %}
+        {% ifequal login 'S' %}
+        <div class="container alert alert-success alert-dismissible fade show" role="alert">
+            Login Successfull!!!
+          </div>
+        {% else %}
+          <div class="container alert alert-danger alert-dismissible fade show" role="alert">
+            Login Failed
+          </div>
+        {% endifequal %}
+      {% endif %}
+      <h1 class="container p-2">Create Article</h1>
+      <div class="container mt-2 mb-4 p-4 card">
+        <form action="{% url 'blog-create' %}" method="post">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p}}
+            <input type="submit" value="Publish Article" class="btn btn-outline-primary md-4">
+        </form>
+      </div>
+      {% include 'bootstrap_scripts.html' %}
+    </body>
+  </html>

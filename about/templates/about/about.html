@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container mt-4">
+      <h1>About This Blogging Website</h1>
+      <div class="card p-4">
+        <h5>This Project is Created By Rishabh Agarwal</h5>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'bootstrap_scripts.html' %}
+  </body>
+</html>

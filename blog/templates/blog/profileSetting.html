@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container mt-3">
+      <h3>Profile Settings Can Be Altered Here</h3>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'bootstrap_scripts.html' %}
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<div class="row justify-content-center mt-4">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2">Sign up</h4>
+</header>
+<article class="card-body">
+<form action="{% url 'register-reg' %}" method='post'>
+  {% csrf_token %}
+	<div class="form-row">
+		<div class="col form-group">
+			<label>User name </label>
+		  	<input type="text" class="form-control" name="fName" placeholder="">
+		</div> <!-- form-group end.// -->
+		<div class="col form-group">
+			<label>First name</label>
+		  	<input type="text" class="form-control" name="lName" placeholder=" ">
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row end.// -->
+	<div class="form-group">
+		<label>Email address</label>
+		<input type="email" class="form-control" placeholder="" name="email">
+		<small class="form-text text-muted">We'll never share your email with anyone else.</small>
+	</div> <!-- form-group end.// -->
+	<div class="form-group">
+			<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" name="gender" value="option1">
+		  <span class="form-check-label"> Male </span>
+		</label>
+		<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" name="gender" value="option2">
+		  <span class="form-check-label"> Female</span>
+		</label>
+	</div> <!-- form-group end.// -->
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label>City</label>
+		  <input type="text" class="form-control">
+		</div> <!-- form-group end.// -->
+		<div class="form-group col-md-6">
+		  <label>Country</label>
+		  <select id="inputState" class="form-control">
+		    <option> Choose...</option>
+		      <option>Uzbekistan</option>
+		      <option>Russia</option>
+		      <option>United States</option>
+		      <option selected="">India</option>
+		      <option>Afganistan</option>
+		  </select>
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row.// -->
+	<div class="form-group">
+		<label>Create password</label>
+	    <input class="form-control" type="password" name="pwd">
+	</div> <!-- form-group end.// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+    </div> <!-- form-group// -->
+    <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
+</form>
+</article> <!-- card-body end .// -->
+</div> <!-- card.// -->
+</div> <!-- col.//-->
+
+</div> <!-- row.//-->
+
+
+</div>

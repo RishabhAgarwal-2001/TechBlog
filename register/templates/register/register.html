@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <body>
+    {% include 'navbar.html' %}
+    {% if login %}
+      {% ifequal login 'S' %}
+      <div class="container alert alert-success alert-dismissible fade show" role="alert">
+          Login Successfull!!!
+        </div>
+      {% else %}
+        <div class="container alert alert-danger alert-dismissible fade show" role="alert">
+          Login Failed
+        </div>
+      {% endifequal %}
+    {% endif %}
+    {% include 'register_form.html' %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'bootstrap_scripts.html' %}
+  </body>
+</html>
